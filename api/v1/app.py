@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""Runs a flask app"""
 import os
 from flask import Flask, Blueprint
 from models import storage

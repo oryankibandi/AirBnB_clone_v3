@@ -1,5 +1,9 @@
 #!/usr/bin/python3
 
+"""
+Registers blueprint and adds the status route
+"""
+
 from api.v1.views import app_views
 from flask import Flask, jsonify
 
