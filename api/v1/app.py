@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import os
 from flask import Flask, Blueprint
 from models import storage
