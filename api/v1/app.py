@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Runs a flask app"""
 import os
-from flask import Flask, Blueprint
+from flask import Flask, Blueprint, jsonify
 from models import storage
 from api.v1.views import app_views
 
@@ -15,6 +15,10 @@ def teardown():
     """performs this when a connection is closed"""
     storage.close()
 
+@app.errorhandler(404)
+def handle_404():
+    """Handles 404 error"""
+    return jsonify({ "error": "Not found" })
 
 if __name__ == '__main__':
     host = os.getenv('HBNB_API_HOST') if not None else '0.0.0.0'
